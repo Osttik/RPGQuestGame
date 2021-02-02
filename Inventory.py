@@ -7,12 +7,12 @@ class Inventory:
 	def AddItemIfCan(self, item):
 		if (len(self.__items) < self.sizeInItems):
 			self.__items.Append(item)
-			self.__weight += item.weight
+			self.__weight += item.GetWeight()
 			return True
 		return False
 	def RemoveItemByIndex(self, index):
 		if (index > 0 and index < len(self.__items)):
-			self.__weight -= self.__items[index].weight
+			self.__weight -= self.__items[index].GetWeight()
 			self.__items.pop(index)
 			return True
 		return False
